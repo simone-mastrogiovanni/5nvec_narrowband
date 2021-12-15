@@ -1,0 +1,27 @@
+snag_local_symbols;
+file=selfile(ligodata);
+
+a=mxFSlGate(file);
+disp(a);
+clear mex;
+clear a;
+a=mxFSlGate(file,'adcData');
+disp(a);
+clear mex;
+clear a;
+a=mxFSlGate(file,'detectProc');
+disp(a);
+clear mex;
+clear a;
+a=mxFSlGate(file,'simData-data');
+disp(a);
+clear mex;
+clear a;
+a=mxFSlGate(file);
+disp(a);
+clear mex;
+clear a;
+a=mxFSlGate(file,'adcData');
+disp(a);
+clear mex;
+clear a;

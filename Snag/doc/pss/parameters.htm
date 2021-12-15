@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>PSS</title>
+<meta name="Microsoft Theme" content="blueprnt 011">
+</head>
+
+<body background="blutextb.gif" bgcolor="#FFFFFF" text="#003399" link="#3366FF" vlink="#9900FF" alink="#000066">
+
+<!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+<p align="center"><font color="#FF0000"><b><font size="6" face="Garamond">PSS Parameters</font></b></font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+  <blockquote>
+    <p align="left">&nbsp; <b>PSS_PAR structure (0 fixed, 1 input, 2 derived, 3 
+    analysis results):</b><br>
+&nbsp;<br>
+&nbsp; 0 <b>&nbsp; p.phys.c</b> light velocity<br>
+&nbsp; 0 <b>&nbsp; p.phys.G</b> gravitational constant<br>
+&nbsp; 0 <b>&nbsp; p.phys.deg2rad</b> conversion factor from degrees to radiants<br>
+&nbsp; 0 <b>&nbsp; p.phys.Evorb</b> Earth mean orbital velocity<br>
+&nbsp; 0 <b>&nbsp; p.phys.Evrot</b> Earth rotational velocity<br>
+&nbsp; 1 <b>&nbsp; p.phys.Dlong</b> detector longitude<br>
+&nbsp; 1 <b>&nbsp; p.phys.Dlat</b> detector latitude<br>
+&nbsp; 1 <b>&nbsp; p.phys.Dazim</b> detector azimuth<br>
+&nbsp; 1 <b>&nbsp; p.phys.Dheig</b> detector heigth<br>
+&nbsp;<br>
+&nbsp; 1 <b>&nbsp; p.source.a</b> a or l of the source<br>
+&nbsp; 1 <b>&nbsp; p.source.d</b> d or b of the source<br>
+&nbsp; 1 <b>&nbsp; p.source.f0</b> frequency of the source<br>
+&nbsp; 1 <b>&nbsp; p.source.df0</b> first derivative of the frequency<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.source.ddf0</b> second derivative of the frequency<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.source.snr</b> signal-to-noise ratio (power, ref. to 
+    short spectra)<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.data.dt</b> sampling time<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.data.sf</b> sampling frequency<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.data.tobs</b> total observation time (days)<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.data.tinit</b> initial time (Matlab datevec vector)<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.data.tnum</b> initial time (numtim)<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.fft.len fft</b> length (number of samples)<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.fft.tlen fft</b> time length<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.fft.N</b> number of ffts<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.fft.onev</b> take one fft every...<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.fft.df</b> frequency bin<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.tfmap.thr</b> threshold for the peaks<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.tfmap.gd2name</b> name of the gd2 object<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.tfmap.capt</b> caption<br>
+&nbsp; 3&nbsp;&nbsp; <b>p.tfmap.npeaktot</b> total number of peaks in the tfmap<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.band.Bf1</b> initial frequency of the full band<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.band.Bf2</b> final frequency of the full band<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.band.f0</b> supposed initial unshifted frequency<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.band.df0</b> f0 first derivative<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.band.ddf0</b> f0 second derivative<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.band.errf0</b> (band.f0-source.f0)/fft.df<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.band.natb</b> &quot;natural&quot; sub-band (working band)<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.band.knatb</b> widening factor of natural sub-band<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.band.bf1</b> sub-band initial frequency<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.band.bf2</b> sub-band final frequency<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.type</b> 0 -&gt; equatorial, 1 -&gt; ecliptical<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.mode</b> 'rectangular', 'trmap' <br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.gd2name</b> name of the gd2 object<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.trmname</b> name of the trmap object<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.da</b> right ascension or lambda resolution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (choose such as na is integer)<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.dd</b> declination or b resolution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (choose such as nd is integer)<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.a1</b> initial a coordinate<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.a2</b> final a coordinate<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.d1</b> initial d coordinate<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.d2</b> final d coordinate<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.na</b> number of a coordinate values<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.nd</b> number of d coordinate values<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.stres</b> standard resolution (on a)<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.restria</b> resolution of triangle map (multiple 
+    of stres)<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.ntria</b> number of triangles<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.Df0</b> f0 step<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.f01</b> initial f0<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.f02</b> final f0<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.nf0</b> number of f0 steps<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.Ddf0</b> df0 step<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.df01</b> initial df0<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.df02</b> final df0<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.ndf0</b> number of df0 steps<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.Dddf0</b> ddf0 step<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.ddf01</b> initial ddf0<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.hmap.ddf02</b> final ddf0<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.hmap.nddf0</b> number of ddf0 steps<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.mapping.type</b> mapping type ('univocal','overlapped','proportional',...)<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.mapping.kdf</b> semi-width of the frequency interval 
+    (in units of df)<br>
+&nbsp;<br>
+&nbsp; 1&nbsp;&nbsp; <b>p.comp.method</b> algorithm (the name)<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.comp.gflops</b> gigaflops needed<br>
+&nbsp; 2&nbsp;&nbsp; <b>p.comp.gbytes</b> gigabytes needed<br>
+&nbsp; <br>
+&nbsp;</p>
+  </blockquote>
+</blockquote>
+<!--mstheme--></font>
+
+</body>
+
+</html>

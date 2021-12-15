@@ -1,0 +1,1 @@
+function out=sidpat_2ant(sidpat_base1,sidpat_base2)

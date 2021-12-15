@@ -1,0 +1,10 @@
+setsnag
+stat=zeros(1,30);
+mode=zeros(1,10);
+mode(1)=1;
+mode(2)=1;
+mode(4)=0.1;
+mode(5)=10;
+mode(6)=2.5;
+mode(7)=10;
+mode(8)=60;

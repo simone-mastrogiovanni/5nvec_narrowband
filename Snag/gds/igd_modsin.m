@@ -1,0 +1,23 @@
+function g=igd_modsin
+%IGD_SIN  interactive sinusoidal signal
+%
+%   interactive call of gd_sin
+
+% Version 1.0 - November 2000
+% Part of Snag toolbox - Signal and Noise for Gravitational Antennas
+% Copyright (C) 2000  Sergio Frasca - sergio.frasca@roma1.infn.it
+% Department of Physics - Universita` "La Sapienza" - Rome
+
+promptcg1={'Amplitude' 'Frequency' 'Phase' 'Length' 'Sampling time' ...
+   'AM amplitude (percentage)' 'AM frequency' 'FM amplitude (percentage)' 'FM frequency' 'PM amplitude' 'PM frequency'};
+defacg1={'1','0.1','0','1024','1','0','0.01','0.05','0.01','0','0.01'};
+answ=inputdlg(promptcg1,'Parameters',1,defacg1);
+
+ev=['g=gd_modsin(''amp'',' answ{1} ',''freq'',' answ{2} ',''phase'',' answ{3} ...
+      ',''len'',' answ{4} ',''dt'',' answ{5} ',''am_amp'',' answ{6} ...
+      ',''am_fr'',' answ{7} ',''fm_amp'',' answ{8} ',''fm_fr'',' answ{9} ...
+      ',''pm_amp'',' answ{10} ',''pm_fr'',' answ{11} ');']
+eval(['g=gd_modsin(''amp'',' answ{1} ',''freq'',' answ{2} ',''phase'',' answ{3} ...
+      ',''len'',' answ{4} ',''dt'',' answ{5} ',''am_amp'',' answ{6} ...
+      ',''am_fr'',' answ{7} ',''fm_amp'',' answ{8} ',''fm_fr'',' answ{9} ...
+      ',''pm_amp'',' answ{10} ',''pm_fr'',' answ{11} ');']);

@@ -1,0 +1,130 @@
+addpath('/storage/users/simone/commented_programs/');
+addpath('/storage/users/simone/Work_tesi/f_compiled/pss2/');
+dtout=1; % Metti il tempo di down sampling
+secondtime=num2str(5.727729165509259e+04);
+selpath_H='/storage/users/simone/ligoh_O1_cal/crab/sdindex/'; % Metti selpath H, stessa dove sono gli originali Cancella i selection
+inseg_H='/storage/users/simone/O1_H1_segments_science_full.txt'; % Metti file per riduzione H, stesso originali
+cut_arr_H=num2str([0 0]); % Metti cut_array, stesso originale
+f_cent_H=num2str(59.3236); % Metti freq centrale, stessa originali
+f_band_H=num2str(0.1189); % Metti banda esplorata, stesstmp_upperlimit_L2.mata originale
+
+selpath_L='/storage/users/simone/ligol_O1_cal/crab/sdindex/'; % Metti selpath L, stessa dove sono gli originali Cancella i selection
+inseg_L='/storage/users/simone/O1_L1_segments_science_full.txt'; % Metti file per riduzione L, stesso originali
+cut_arr_L=cut_arr_H; % Metti cut_array, stesso originale
+f_cent_L=f_cent_H; % Metti freq centrale, stessa originali
+f_band_L=f_band_H; % Metti banda esplorata, stessa originale
+
+
+
+timepath_H='/storage/users/simone/ligoh_O1_cal/crab/C01Hcrist_crab_timevar.mat'; % metti file temporale per H
+mainfile_H='/storage/users/simone/ligoh_O1_cal/crab/C01Hcrist_crabdata_part1.mat'; % file principale per H
+timepath_L='/storage/users/simone/ligol_O1_cal/crab/C01Lcrist_crab_timevar.mat'; % metti file temporale per L
+mainfile_L='/storage/users/simone/ligol_O1_cal/crab/C01Lcrist_crabdata_part1.mat'; % metti file principale per L
+
+
+Ninj=1; % numero di onde che vuoi iniettare
+Npk=1188; % numeri di pk da iniettare, uguali al reduction
+dfpk=1e-4; % Ogni quanta freq li devo iniettare= alla sottobanda
+
+load(timepath_H);
+load(mainfile_H,'source','ant','t0','pars');
+
+source_H=source;
+siout_H=siout; % Si carica sorgente per H
+ant_H=ant; % Si carica antenna H
+t0_H=t0; % tempo iniziale per H
+virgin_pars_H=pars;
+g_ein=gtime-g_p-g_tnot;
+tt_H=g_tnot+g_ein;
+tt_H=tt_H+(t0-str2double(secondtime))*86400;
+g_p_H=g_p;
+source_H=rmfield(source_H,'ephfile');
+source_H=rmfield(source_H,'ephstarttime');
+source_H=rmfield(source_H,'ephendtime');
+
+
+
+load(timepath_L);
+load(mainfile_L,'source','ant','t0','pars');
+
+siout_L=siout;
+source_L=source; % Si carica sorgente per L
+ant_L=ant; % Si carica antenna L
+t0_L=t0; % tempo iniziale per L
+
+g_ein=gtime-g_p-g_tnot;
+tt_L=g_tnot+g_ein;
+tt_L=tt_L+(t0-str2double(secondtime))*86400;
+g_p_L=g_p;
+source_L=rmfield(source_L,'ephfile');
+source_L=rmfield(source_L,'ephstarttime');
+source_L=rmfield(source_L,'ephendtime');
+
+
+
+virgin_pars_L=pars;
+
+whos
+
+for i=1:1:Ninj 
+    freqrandom=rand;
+    source_H.f0=str2double(f_cent_H)-str2double(f_band_H)/2+freqrandom*9.435579664929356e-08; % METTI FREQUENZA IN CUI INIZI AD INIETTARE
+    sdrand=(rand*(164)-82); % Metti i termini di spin-down da simulare
+    source_H.sdindex=round(sdrand); % Si mette un nuovo campo per l'sdindexmodificato00000000000000000000000000000000000000000000000000
+    source_H.df0=virgin_pars_H.df0+sdrand*9.435579664929356e-08^2; % Qui si genera lo spin-down casuale
+    source_H.fepoch=str2double(secondtime);
+    source_H.pepoch=str2double(secondtime);
+    
+    %source_H.df0=0
+    %source_H.ddf0=0
+    
+    source_H.eta=-1+rand*2; %$Genera parametri di onda casuali
+    source_H.psi=(-pi/2+pi*rand)*180/pi;
+    source_H.h=1e-6; % Metti una determinata ampiezza seria
+    outcell=gen_sig_dopp(source_H,ant_H,tt_H,g_p_H,t0_H,Npk,dfpk,dtout);
+    hsim=outcell{1};    
+    wave=outcell{2};    
+%     load(mainfile_H,'in','ibias','ext1','ioutb','dtout','ioutin','t0','pars','ioutout','T0','P','out','source','ant','sourcestr');
+%     g=hsim.';
+%     source=source_H;
+%     save('tmp_upperlimit_H2.mat','in','ibias','ext1','ioutb','g','dtout','t0','pars','ioutout','T0','P','out','source','ant','sourcestr');
+%     if exist('ioutin','var')
+%     save('tmp_upperlimit_H2.mat','in','ibias','ext1','ioutb','g','dtout','t0','pars','ioutout','T0','P','out','source','ant','sourcestr','ioutin');
+%     else
+%             save('tmp_upperlimit_H2.mat','in','ibias','ext1','ioutb','g','dtout','t0','pars','ioutout','T0','P','out','source','ant','sourcestr');
+% 
+%     end
+    reduce_for_upper(secondtime,selpath_H,timepath_H,['injection_H_n_',num2str(i),'_'],'tmp_upperlimit_H2.mat',inseg_H,f_cent_H,f_band_H,num2str(0),num2str(0),cut_arr_H,num2str(0));
+
+    source_L.f0=source_H.f0; % METTI FREQUENZA IN CUI INIZI AD INIETTARE
+    source_L.sdindex=round(sdrand); % Si mette un nuovo campo per l'sdindexmodificato00000000000000000000000000000000000000000000000000
+    source_L.df0=source_H.df0; % Qui si genera lo spin-down casuale
+   
+    
+    %source_L.df0=0
+    %source_L.ddf0=0
+    
+    source_L.eta=source_H.eta; %$Genera parametri di onda casuali
+    source_L.psi=source_H.psi;
+    source_L.h=source_H.h; % Metti una determinata ampiezza seria % Mette le due sorgenti uguali
+    source_L.fepoch=str2double(secondtime);
+    source_L.pepoch=str2double(secondtime);
+    
+    outcell=gen_sig_dopp(source_L,ant_L,tt_L,g_p_L,t0_L,Npk,dfpk,dtout);
+    hsim=outcell{1};    
+    wave=outcell{2};
+%     load(mainfile_L,'in','ibias','ext1','ioutb','dtout','ioutin','t0','pars','ioutout','T0','P','out','source','ant','sourcestr');
+%     g=hsim.';
+%     source=source_L;
+% 
+%     if exist('ioutin','var')
+%     save('tmp_upperlimit_L2.mat','in','ibias','ext1','ioutb','g','dtout','t0','pars','ioutout','T0','P','out','source','ant','sourcestr','ioutin');
+%     else
+%             save('tmp_upperlimit_L2.mat','in','ibias','ext1','ioutb','g','dtout','t0','pars','ioutout','T0','P','out','source','ant','sourcestr');
+% 
+%     end
+    reduce_for_upper(secondtime,timepath_L,['injection_L_n_',num2str(i),'_'],'tmp_upperlimit_L2.mat',inseg_L,f_cent_L,f_band_L,num2str(0),num2str(0),cut_arr_L,num2str(0));
+    inj_wave{i}=wave;
+    i
+end
+save('inj_waves_file_crab.mat','inj_wave')

@@ -1,0 +1,39 @@
+COME INSTALLARE  Frvsoccket
+
+1)Mettete la cartella FrvSocket in un posto qualsiasi, 
+non ha bisogno di una locazione specifica.
+
+2)Aggiungere la directory del pacchetto (incluse le
+sottodirectory) al path di Matlab
+file -> seth path -> Add with Subfolders
+
+3) Avviare, da dentro matlab, il compilatore, cioe'
+fate girare il file  Make.m contenuto in
+FrvSocket/Matlab
+
+4)Lanciare testMatLabFrvS per vedere se tutto funziona.
+
+POSSIBILI ERRORI
+L´unico problema che ho avuto e´ stato relativo alla versione del compilatore.
+Se dovesse capitarvi la stessa cosa potete risolverlo nel seguente modo
+altrimenti scrivete a Punturo!
+
+Problema: il compilatore sembra portare tutto a buon fine ma quando lanciate
+testMatLabFrvS, matlab vi da il seguente errore:
+
+??? Invalid MEX-file
+>>> '../FrvSocket/Matlab/MatFrvSconnect.mexglx':
+>>> /usr/local/matlab71/bin/glnx86/../../sys/os/glnx86/libgcc_s.so.1: version
+>>> `GCC_3.3' not found (required by /usr/lib/libstdc++.so.6).
+>>> Error in ==> testMatLabFrvS at 7
+>>> fd=MatFrvSconnect('farmn11.virgo.infn.it',1490);
+
+Come si risolve:
+create una cartella chiamata old in
+/usr/local/matlab71/sys/os/glnx86/
+spostate tutte le librerie (libgcc ecc.) nella cartella old
+in questo modo il compilatore e´ costretto ad usare le librerie di sistema
+a lui adatte.
+
+
+In bocca al lupo!

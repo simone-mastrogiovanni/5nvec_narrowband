@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Pss</title>
+<meta name="Microsoft Theme" content="blueprnt 011">
+</head>
+
+<body background="blutextb.gif" bgcolor="#FFFFFF" text="#003399" link="#3366FF" vlink="#9900FF" alink="#000066">
+
+<!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+<p align="center"><b><font size="6" color="#FF0000" face="Garamond">Pss_Explorer 
+Functions</font></b></p>
+<p align="center">&nbsp;</p>
+<!--mstheme--></font>
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="95%" id="AutoNumber1" bordercolorlight="#3366FF" bordercolordark="#003399" height="1506">
+  <tr>
+    <td width="25%" height="134"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>p=pss_par(varargin)</b></font><!--mstheme--></font></td>
+    <td width="75%" height="134"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">Computes parameters for the pss tool-box. </font>
+    <p><font color="#0000FF">If the input parameter is 'init', a p structure is 
+    created with default values; if the input parameter is a p structure, all 
+    the derived parameter are computed.</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="46"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>p=pss_defpar()</b></font><!--mstheme--></font></td>
+    <td width="75%" height="46"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">Sets default parameters for various situations, chosen 
+    interactively.</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="134"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>p=ipss_par(arg)</b></font><!--mstheme--></font></td>
+    <td width="75%" height="134"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">I<font color="#0000FF">nteractive access to the parameter structure.</font><p>
+    <font color="#0000FF">The argument arg can be a pss_par structure to be 
+    visualized or updated, or a key ('init', for example)</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="69"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>[tfmap,p]=</b></font><p><font color="#0000FF"><b>
+    pss_peakmap(p)</b></font><!--mstheme--></font></td>
+    <td width="75%" height="69"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">Creates a peak map, based on the parameter structure 
+    p. If p.source.snr=-1, it creates a test peak map.</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="149"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>[tfmap,p]=</b></font><p><font color="#0000FF"><b>
+    pss_peakmaptest</b></font></p>
+    <p><font color="#0000FF"><b>(p)</b></font></p>
+    <p>&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="149"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">Creates a coverage test peak map, based on the 
+    parameter structure p.</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="107"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">
+    <b>[A,tA]=</b></font><p><font color="#0000FF"><b>pss_specmap</b></font></p>
+    <p><font color="#0000FF"><b>(varargin)</b></font><!--mstheme--></font></td>
+    <td width="75%" height="107"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">Creates a time-frequency spectral map.</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <b><font color="#0000FF">sim_fft</font></b><!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">not yet implemented</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="21"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="21"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>do_circtab</b></font><!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">creates a LUT table for the Hough transform</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>HM=pss_hough</b></font><p><font color="#0000FF"><b>
+    (p,peakmap)</b></font><!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">creates the Hough Map, starting from the peak map, in 
+    the classical way</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF"><b>HM=pss_hough_lut</b></font><p>
+    <font color="#0000FF"><b>(p,tfmap)</b></font><!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+    <font color="#0000FF">creates the Hough Map, starting from the peak map, 
+    using the pre-created LUT</font><!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+  <tr>
+    <td width="25%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+    <td width="75%" height="23"><!--mstheme--><font face="Century Gothic, Arial, Helvetica">&nbsp;<!--mstheme--></font></td>
+  </tr>
+</table>
+<!--mstheme--><font face="Century Gothic, Arial, Helvetica">
+<blockquote>
+  <blockquote>
+        <p align="left">&nbsp;</blockquote>
+</blockquote>
+<!--mstheme--></font>
+
+</body>
+
+</html>
